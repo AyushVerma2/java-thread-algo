@@ -10,7 +10,7 @@ public class TaskRejectionHandler {
                 TimeUnit.SECONDS, new ArrayBlockingQueue<>(300),
                 new CustomeRejectionHandler());
 
-        // to shutdonw
+        // to shutdown
         ses.shutdown(); // it will initiate only
 
     }
