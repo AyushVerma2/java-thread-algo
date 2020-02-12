@@ -1,20 +1,18 @@
 ### EXECUTOR Example explanation:
 
-	Executer -1
-	-each java thred corrospond to one OS thread.
-	-CPU intensive" hashing or cryptographic/video alog..
-	-IO bound DB/netwrk/File
-	-if app is cup cound ,then nuomber of thread shud be equal to number of cores..
-
-	Exectue -2
-		-4 type of threadpool
-		-Fixed threadpool, (in blocking Q and thread pick task form it)
-		-CachedThread pool , Synchronous  Q ,kill htead if idle, can create any  umber of thread.
-		-ScheduledThreadpool: kind of task that need to eb schduele(scurity check.log check evey 10 sec)
-		  service.scheduleAtFixedRAte and service.secheduelATFixedDelay
-		   service.schedule(new TAsk(),10)
-		 -SingleThreadExecutor: same as fixedTP ,if thread is killed, it will recreate a new threas and execute
-		 						: when we want task 1 run before task 2 i.e sequential
+ #### Executer 
+* each java thred corrospond to one OS thread.
+* CPU intensive" hashing or cryptographic/video alog..
+* IO bound DB/netwrk/File
+* if app is cup cound ,then nuomber of thread shud be equal to number of cores..
+* 4 type of threadpool
+   * Fixed threadpool, (in blocking Q and thread pick task form it)
+   * CachedThread pool , Synchronous  Q ,kill htead if idle, can create any  umber of thread.
+   * ScheduledThreadpool: kind of task that need to eb schduele(scurity check.log check evey 10 sec)
+	 * service.scheduleAtFixedRAte and service.secheduelATFixedDelay
+         * service.schedule(new TAsk(),10)
+   * SingleThreadExecutor: same as fixedTP ,if thread is killed, it will recreate a new threas and execute
+		 	*  when we want task 1 run before task 2 i.e sequential
                 
   ### Java memory model:
 Program: seres of statement,jvm may change the order of ur instruction to drive the prefformacne but the semantic of prog remain same.
