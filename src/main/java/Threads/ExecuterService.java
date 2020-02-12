@@ -3,7 +3,7 @@ package Threads;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class Thread_01 {
+public class ExecuterService {
     public static void main(String a[]) {
 
         oldway(12);
@@ -34,7 +34,7 @@ public class Thread_01 {
      */
     private static void testExecutorForCPUintensive() {
 
-        int numberOfCoreprocessor =Runtime.getRuntime().availableProcessors();
+        int numberOfCoreprocessor = Runtime.getRuntime().availableProcessors();
 
         ExecutorService executorService = Executors.newFixedThreadPool(numberOfCoreprocessor);
         for (int i = 0; i < 10; i++) {
@@ -49,12 +49,13 @@ public class Thread_01 {
     private static void testExecutorForIOintensive() {
 
         // may be all thread is wating ,so we can more thread then core..
-        int numberOfthread =50;
+        int numberOfthread = 50;
 
         ExecutorService executorService = Executors.newFixedThreadPool(numberOfthread);
         for (int i = 0; i < 10; i++) {
             executorService.execute(() -> System.out.println("IO intesnive task is  running" + Thread.currentThread().getName()));
         }
     }
+
 
 }
