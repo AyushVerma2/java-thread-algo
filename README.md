@@ -13,6 +13,29 @@
          * service.schedule(new TAsk(),10)
    * SingleThreadExecutor: same as fixedTP ,if thread is killed, it will recreate a new threas and execute
 		 	*  when we want task 1 run before task 2 i.e sequential
+ Executor service Argument adn API:
+ 
+
+#### ExecuterService arguments:
+
+1 Core pool size 
+2 max pool size
+3 Keep alive time(KAT): time after which the thread pool will kill the thread if idle
+
+* FixedThreadpool: core-size = max  and KAT os 0 sec ,LinkedClockingQueue
+* CachedThread pool: 0 ,Integrer.MAX, 60 sec ,SynchronousQueue
+* ScheduledThreadPool: arg,Interger.mac,60 ,DelayBlockQueue
+* SingleThreadPool: 1,1,0sec LinkedBlockingQueue
+* CustomeThreadpool: ArrayBlockingQueue (bounded Q )
+* Reject task: TP will rejet task iof not space to store, based on policy(Abortplocy,DiscardPolicy,DicardOlder,CAllerRunpolicy)
+* alowcoreThreadTimeout(boolean) ;// if core thread pools size vary or not , default false
+* service.shutdown():// it will initialte shutdown
+*  service.isShutdown();/true if shutdonw
+* service.isTermianted():// ture if all task is completed
+* service.awaitTermination(10,Sec): // block until all ntask completed or timeout happen
+* List<Runnable> alltask =service.shutdonwNow();
+
+
                 
   ### Java memory model:
 Program: seres of statement,jvm may change the order of ur instruction to drive the prefformacne but the semantic of prog remain same.
