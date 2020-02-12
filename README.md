@@ -18,9 +18,9 @@
 
 #### ExecuterService arguments:
 
- 1 Core pool size.
- 2 max pool size.
- 3 Keep alive time(KAT): time after which the thread pool will kill the thread if idle.
+ 1. Core pool size.
+ 2. max pool size.
+ 3. Keep alive time(KAT): time after which the thread pool will kill the thread if idle.
 
 * FixedThreadpool: core-size = max  and KAT os 0 sec ,LinkedClockingQueue
 * CachedThread pool: 0 ,Integrer.MAX, 60 sec ,SynchronousQueue
