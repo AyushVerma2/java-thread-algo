@@ -35,7 +35,11 @@
 * service.awaitTermination(10,Sec): // block until all ntask completed or timeout happen
 * List<Runnable> alltask =service.shutdonwNow();
 
-
+### Example
+ * It has examples:
+   - Getting price form different hotels and finding the min using Executor,CountdownLAtch and CompletableFuture.
+   - Producer,Consumer : using in build ArrayBlockingQ and Also Custom Blocking Queue :)
+   
                 
   ### Java memory model:
 Program: seres of statement,jvm may change the order of ur instruction to drive the prefformacne but the semantic of prog remain same.
