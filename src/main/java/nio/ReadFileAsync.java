@@ -13,7 +13,7 @@ public class ReadFileAsync {
         readFile();
 
         // do some other work
-        
+
         Thread.sleep(10000);
     }
 
