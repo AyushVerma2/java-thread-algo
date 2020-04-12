@@ -26,13 +26,6 @@ public class VMware_02 {
         return Collections.max(counts.entrySet(),
                 Comparator.comparingInt(Map.Entry::getValue)).getKey();
 
-//        Map<String, Integer> res = new TreeMap();
-//                res.putAll(counts);
-//
-//        return Collections.max(res.entrySet(),
-//                Comparator.comparingInt(Map.Entry::getValue)).getKey();
-
-        //return ((TreeMap<String, Integer>) res).firstEntry().getKey();
 
     }
 }
