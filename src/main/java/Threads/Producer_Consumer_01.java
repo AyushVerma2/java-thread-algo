@@ -9,7 +9,7 @@ public class Producer_Consumer_01 {
 
     static int input = 0;
 
-    public static void main(String a[]) {
+    public static void main(String[] a) {
 
         // create a Blocking Q
 

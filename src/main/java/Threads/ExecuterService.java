@@ -4,7 +4,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class ExecuterService {
-    public static void main(String a[]) {
+    public static void main(String[] a) {
 
         oldway(12);
         testExecutor();
@@ -21,16 +21,19 @@ public class ExecuterService {
 
     private static void testExecutor() {
 
-// so mac thread will be 10 . even it perfrom 100 task submitted
-        // it used blocking Queue as it is thread safge,, all thread will try to fethc the
+// so max thread will be 10 . even it perform 100 task submitted
+        // it used blocking Queue as it is thread safe,, all thread will try
+        // to fetch the
         ExecutorService executorService = Executors.newFixedThreadPool(10);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             executorService.execute(() -> System.out.println("Task in Executor is running" + Thread.currentThread().getName()));
         }
     }
 
     /**
-     * Task like find the hash or cryptographic fucntion
+     * Task like find the hash or cryptographic function
+     * if task is pur bond then no o thread shud be eaqula to no of cores
+     * if task has lots io bond then no of thread can be more that cores.
      */
     private static void testExecutorForCPUintensive() {
 

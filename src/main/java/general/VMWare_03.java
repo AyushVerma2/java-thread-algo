@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * Problem statement:Thread Transaction
  * https://docs.google.com/document/d/151N6_JqZ2VmewBQ4VTs2aTNr2xKKWSTnyVHCyYCwe6Q/edit
- *
  */
 public class VMWare_03 {
-    public static void main(String a[]) throws InterruptedException {
+    public static void main(String[] a) throws InterruptedException {
         Transaction transaction = new Transaction();
 
         Runnable depoistTash = () -> {

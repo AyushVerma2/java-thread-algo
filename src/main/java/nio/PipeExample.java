@@ -11,9 +11,9 @@ import java.nio.channels.Pipe;
  * This data can then be read from the source channel.
  */
 public class PipeExample {
-    public static void main(String a[]) throws IOException {
+    public static void main(String[] a) throws IOException {
 
-        Pipe pipe= Pipe.open();
+        Pipe pipe = Pipe.open();
 
         // writing
         Pipe.SinkChannel sinkChannel = pipe.sink();
@@ -25,7 +25,7 @@ public class PipeExample {
 
         buf.flip();
 
-        while(buf.hasRemaining()) {
+        while (buf.hasRemaining()) {
             sinkChannel.write(buf);
         }
 
@@ -36,8 +36,8 @@ public class PipeExample {
         int bytesRead = sourceChannel.read(buf);
 
         byte[] data = new byte[bytesRead];
-        bufRead= buf.get(data);
-       System.out.println(data.toString());
+        bufRead = buf.get(data);
+        System.out.println(data.toString());
 
     }
 }

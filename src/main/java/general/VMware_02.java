@@ -6,14 +6,13 @@ import java.util.stream.Collectors;
 /**
  * Problem statement:Feature Products
  * https://docs.google.com/document/d/151N6_JqZ2VmewBQ4VTs2aTNr2xKKWSTnyVHCyYCwe6Q/edit
- *
  */
 public class VMware_02 {
 
-    public static void main(String a[]) {
+    public static void main(String[] a) {
 
         List<String> prods = Arrays.asList("aaa", "nnn", "ttt", "aaa", "fff", "nnn",
-                "fafda", "ytt","nnn","nnn","aaa","aaa","nnn");
+                "fafda", "ytt", "nnn", "nnn", "aaa", "aaa", "nnn");
         System.out.println(featuredProdue(prods));
     }
 

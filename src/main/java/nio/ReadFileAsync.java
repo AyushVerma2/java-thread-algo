@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
 public class ReadFileAsync {
-    public static void main(String a[]) throws IOException, InterruptedException {
+    public static void main(String[] a) throws IOException, InterruptedException {
         readFile();
 
         // do some other work

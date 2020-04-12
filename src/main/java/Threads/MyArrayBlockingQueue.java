@@ -7,6 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Custom class that is basic Array blocking Queue implementation
+ *
  * @param <T>
  */
 public class MyArrayBlockingQueue<T> {
@@ -25,6 +26,7 @@ public class MyArrayBlockingQueue<T> {
 
     /**
      * This method is used to put and element in Q
+     *
      * @param i
      * @throws InterruptedException
      */
@@ -45,6 +47,7 @@ public class MyArrayBlockingQueue<T> {
 
     /**
      * Apit to take an elelment from Q
+     *
      * @return
      * @throws InterruptedException
      */

@@ -6,11 +6,12 @@ import java.util.Set;
 import java.util.concurrent.*;
 
 /**
- * this is an example where user has to fidn the best price from the 3 hotel API and give the result
+ * this is an example where user has to fidn the best price from the 3 hotel API
+ * and give the result
  */
 public class Task_Example {
 
-    public static void main(String a[]) throws InterruptedException, TimeoutException, ExecutionException {
+    public static void main(String[] a) throws InterruptedException, TimeoutException, ExecutionException {
 
         Set<Integer> allPrices = getProdcutPrice("1234", "hotelURL");
         allPrices.forEach(System.out::println);
@@ -76,6 +77,7 @@ class Task implements Runnable {
     private Set<Integer> price;
     private String url;
     private String product_id;
+
     public Task(String url, String product_id, Set<Integer> price) {
         this.price = price;
         this.url = url;

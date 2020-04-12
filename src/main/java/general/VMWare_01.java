@@ -1,17 +1,16 @@
 package general;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.stream.IntStream;
 
 /**
  * Problem statement: Portfolio balances
  * https://docs.google.com/document/d/151N6_JqZ2VmewBQ4VTs2aTNr2xKKWSTnyVHCyYCwe6Q/edit
- *
  */
 public class VMWare_01 {
 
-    public static void main(String a[]) {
+    public static void main(String[] a) {
 
         List<Integer> intLst1 = new ArrayList<>();
         List<Integer> intLst2 = new ArrayList<>();
@@ -33,30 +32,45 @@ public class VMWare_01 {
         input.add(intLst2);
         input.add(intLst3);
 
-        int[] result = getListInput(input);
-        System.out.println(Arrays.toString(result));
+
+        long start = System.currentTimeMillis();
+        //long max =maxValue(3,input);
+        long max = getListInput(5, input);
+        long end = System.currentTimeMillis();
+        System.out.println("MAX " + max + " TIME Start : " + start + " TIME END : " + end);
 
 
     }
 
-    static int[] getListInput(List<List<Integer>> input) {
+    static long getListInput(int n, List<List<Integer>> input) {
 
-        int arr[] = new int[]{0, 0, 0, 0, 0};
+        long[] arr = new long[n];
+        long max = 0;
 
         for (int i = 0; i < input.size(); i++) {
-            arr = updateData(arr, input.get(i).get(0), input.get(i).get(1),
-                    input.get(i).get(2));
-
+            List<Integer> data = input.get(i);
+            for (int j = data.get(0) - 1; j < data.get(1); j++) {
+                arr[j] = arr[j] + data.get(2);
+                max = max < arr[j] ? arr[j] : max;
+            }
         }
-        return arr;
+        return max;
     }
 
-    static int[] updateData(int[] arr, int start, int end, int data) {
-        for (int i = start - 1; i < end; i++) {
-            arr[i] = arr[i] + data;
-        }
-        return arr;
 
+    public static long maxValue(int n, List<List<Integer>> rounds) {
+        long[] ar = new long[n];
+        rounds.stream().forEach(round -> {
+            IntStream.range(round.get(0), round.get(1)).forEach(index -> {
+                ar[index - 1] = ar[index - 1] + round.get(2);
+            });
+        });
+
+        long result = 0;
+        for (long val : ar) {
+            if (val > result) result = val;
+        }
+        return result;
     }
 
 }
