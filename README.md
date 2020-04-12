@@ -1,33 +1,38 @@
 ### EXECUTOR Example explanation:
 
  #### Executer 
-* each java thred corrospond to one OS thread.
+* each java thread correspond to one OS thread.
 * CPU intensive" hashing or cryptographic/video alog..
-* IO bound DB/netwrk/File
-* if app is cup cound ,then nuomber of thread shud be equal to number of cores..
+* IO bound DB/network/File
+* if app is cup bound ,then number of thread should be equal to number of 
+cores..
 * 4 type of threadpool
    * Fixed threadpool, (in blocking Q and thread pick task form it)
-   * CachedThread pool , Synchronous  Q ,kill htead if idle, can create any  umber of thread.
-   * ScheduledThreadpool: kind of task that need to eb schduele(scurity check.log check evey 10 sec)
+   * CachedThread pool , Synchronous  Q ,kill thread if idle, can create any  
+   number of thread.
+   * ScheduledThreadPool: kind of task that need to eb schduele(scurity check
+   .log check evey 10 sec)
 	 * service.scheduleAtFixedRAte and service.secheduelATFixedDelay
          * service.schedule(new TAsk(),10)
-   * SingleThreadExecutor: same as fixedTP ,if thread is killed, it will recreate a new threas and execute
+   * SingleThreadExecutor: same as fixedTP ,if thread is killed, it will 
+   recreate a new thread and execute
 		 	*  when we want task 1 run before task 2 i.e sequential
  Executor service Argument adn API:
  
 
-#### ExecuterService arguments:
+#### Executor Service arguments:
 
  1. Core pool size.
  2. max pool size.
  3. Keep alive time(KAT): time after which the thread pool will kill the thread if idle.
 
-* FixedThreadpool: core-size = max  and KAT os 0 sec ,LinkedClockingQueue
-* CachedThread pool: 0 ,Integrer.MAX, 60 sec ,SynchronousQueue
-* ScheduledThreadPool: arg,Interger.mac,60 ,DelayBlockQueue
+* FixedThread pool: core-size = MAX  and KAT os 0 sec ,LinkedClockingQueue
+* CachedThread pool: 0 ,Integer.MAX, 60 sec ,SynchronousQueue
+* ScheduledThreadPool: arg,Integer.MAX,60 ,DelayBlockQueue
 * SingleThreadPool: 1,1,0sec LinkedBlockingQueue
-* CustomeThreadpool: ArrayBlockingQueue (bounded Q )
-* Reject task: TP will rejet task iof not space to store, based on policy(Abortplocy,DiscardPolicy,DicardOlder,CAllerRunpolicy)
+* CustomeThread pool: ArrayBlockingQueue (bounded Q )
+* Reject task: TP will reject task iof not space to store, based on policy
+(Abortplocy,DiscardPolicy,DicardOlder,CAllerRunpolicy)
 * alowcoreThreadTimeout(boolean) ;// if core thread pools size vary or not , default false
 * service.shutdown():// it will initialte shutdown
 *  service.isShutdown();/true if shutdonw
