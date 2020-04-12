@@ -4,6 +4,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
+ * Problem statement:Feature Products
+ * https://docs.google.com/document/d/151N6_JqZ2VmewBQ4VTs2aTNr2xKKWSTnyVHCyYCwe6Q/edit
  *
  */
 public class VMware_02 {
