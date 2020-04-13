@@ -1,4 +1,4 @@
-package general;
+package companyquestion.vmware;
 
 import java.util.*;
 import java.util.stream.Collectors;
