@@ -81,7 +81,7 @@ public class Main extends Thread {
 ### JVM ARCHITECTURE:
 
 <img src="jvm-3.png"
-     alt="Markdown Monster icon"
+     alt="JVM"
      style="float: left; margin-right: 10px;" />
      
  ##### Class loader:
