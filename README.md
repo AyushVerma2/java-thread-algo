@@ -61,3 +61,18 @@ Program: seres of statement,jvm may change the order of ur instruction to drive 
  * JMM: gurantee of reodfering and visibility of fields. , it informce all JVM has to implemet this.
  * synchroniz: if write happend before read(in diff thread), JMM will take care, if it is sync block.Also Sync has to applied on same object..
 	 
+### git all active thread
+
+public class Main extends Thread {
+   public static void main(String[] args) {
+      Main t1 = new Main();
+      t1.setName("thread1");
+      t1.start();
+      ThreadGroup currentGroup = Thread.currentThread().getThreadGroup();
+      int noThreads = currentGroup.activeCount();
+      Thread[] lstThreads = new Thread[noThreads];
+      currentGroup.enumerate(lstThreads);
+      
+      for (int i = 0; i < noThreads; i++) System.out.println("Thread No:" + i + " = " + lstThreads[i].getName());
+   }
+}
