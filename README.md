@@ -80,7 +80,7 @@ public class Main extends Thread {
 ```
 ### JVM ARCHITECTURE:
 
-<img src="jvm.png"
+<img src="jvm-3.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
      
