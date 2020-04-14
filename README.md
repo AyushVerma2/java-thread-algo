@@ -79,10 +79,7 @@ public class Main extends Thread {
 }
 ```
 ### JVM ARCHITECTURE:
-
-<img src="jvm-3.png"
-     alt="JVM"
-     style="float: left; margin-right: 10px;" />
+![JVM JVM](https://github.com/AyushVerma2/java-nio-thread/blob/master/jvm-3.jpg)
      
  ##### Class loader:
   Class loading: 
