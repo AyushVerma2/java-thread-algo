@@ -79,6 +79,11 @@ public class Main extends Thread {
 }
 ```
 ### JVM ARCHITECTURE:
+
+<img src="jvm.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+     
  ##### Class loader:
   Class loading: 
 Loading :reads the .class file, generate the corresponding binary
