@@ -62,7 +62,7 @@ Program: seres of statement,jvm may change the order of ur instruction to drive 
  * synchroniz: if write happend before read(in diff thread), JMM will take care, if it is sync block.Also Sync has to applied on same object..
 	 
 ### git all active thread
-
+```xml
 public class Main extends Thread {
    public static void main(String[] args) {
       Main t1 = new Main();
@@ -76,3 +76,4 @@ public class Main extends Thread {
       for (int i = 0; i < noThreads; i++) System.out.println("Thread No:" + i + " = " + lstThreads[i].getName());
    }
 }
+```
