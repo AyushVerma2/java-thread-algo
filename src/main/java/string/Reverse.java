@@ -15,11 +15,11 @@ public class Reverse {
 
     public static String reverseRecurssion(String s) {
 
-        if(s.length()<=1){
+        if (s.length() <= 1) {
             return s;
         }
-        return s.toCharArray()[s.length()-1]+reverseRecurssion(s.substring(0,
-                s.length()-1));
+        return s.toCharArray()[s.length() - 1] + reverseRecurssion(s.substring(0,
+                s.length() - 1));
     }
 
     public static void main(String[] args) {

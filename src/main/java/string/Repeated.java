@@ -8,6 +8,7 @@ public class Repeated {
     public static void main(String[] args) {
         System.out.println(getFirstNonRepeatedChar("this is ayish data"));
     }
+
     public static char getFirstNonRepeatedChar(String str) {
         Map<Character, Integer> counts = new LinkedHashMap<>(str.length());
         for (char c : str.toCharArray()) {

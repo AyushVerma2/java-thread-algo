@@ -5,12 +5,12 @@ import java.util.Arrays;
 public class RemoveDuplicate {
     public static void main(String[] args) {
 
-        char aa='t';
-        char bb='t';
-        char ee ='t';
-        int cc=aa^bb^ee^aa;
-        System.out.println(Character.getNumericValue('o') + "   "+ cc);
-       System.out.println(removeDuplicate("ayushayush"));
+        char aa = 't';
+        char bb = 't';
+        char ee = 't';
+        int cc = aa ^ bb ^ ee ^ aa;
+        System.out.println(Character.getNumericValue('o') + "   " + cc);
+        System.out.println(removeDuplicate("ayushayush"));
     }
 
     public static String removeDuplicate(String s) {
@@ -20,7 +20,7 @@ public class RemoveDuplicate {
         }
 
         int index = 0;
-        char res[] = new char[s.length()];
+        char[] res = new char[s.length()];
 
         for (int i = 0; i < s.length(); i++) {
             int j;

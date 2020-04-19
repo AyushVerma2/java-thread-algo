@@ -19,8 +19,8 @@ public class MaxOccurence {
         }
 
         final int ASCII_SIZE = 256;
-        int temArr[] = new int[ASCII_SIZE];
-        char t[] = s.toCharArray();
+        int[] temArr = new int[ASCII_SIZE];
+        char[] t = s.toCharArray();
         for (int i = 0; i < s.length(); i++) {
             temArr[s.toCharArray()[i]]++;
         }

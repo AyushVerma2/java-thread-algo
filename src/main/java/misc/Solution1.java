@@ -29,7 +29,7 @@ class Solution1 {
         int second = Integer.parseInt(s2);
         int result = first + second;
 
-        if(result == 0){
+        if (result == 0) {
             return new ListNode(0);
         }
         int reversed = 0;
@@ -44,7 +44,7 @@ class Solution1 {
         ListNode l11 = new ListNode(0);
         ListNode head = null;
         ListNode tail = null;
-        for (int i = 1; i <ss.toCharArray().length-1; i--) {
+        for (int i = 1; i < ss.toCharArray().length - 1; i--) {
             System.out.println(ss.charAt(i));
             //addAtEnd(head, Character.getNumericValue(ss.charAt(i)));
             ListNode newNode = new ListNode(Character.getNumericValue(ss.charAt(i)));
@@ -67,7 +67,7 @@ class Solution1 {
 
     }
 
-    public static void main(String s[]) {
+    public static void main(String[] s) {
 
         ListNode l1 = new ListNode(0);
 //        ListNode l2 = new ListNode(4);

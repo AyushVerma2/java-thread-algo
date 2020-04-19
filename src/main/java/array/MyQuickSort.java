@@ -1,13 +1,11 @@
 package array;
 
-import Threads.MyArrayBlockingQueue;
-
 import java.util.Arrays;
 
 public class MyQuickSort {
     public static void main(String[] args) {
 
-        int[] i ={6, 5, 3, 1, 8, 7, 2, 4};
+        int[] i = {6, 5, 3, 1, 8, 7, 2, 4};
 
         QuickSort myQuickSort
                 = new QuickSort();
@@ -20,15 +18,13 @@ public class MyQuickSort {
 }
 
 
-
 class QuickSort {
 
-    int input[];
+    int[] input;
     int lenght;
 
 
-
-    void quicksort(int low,int high){
+    void quicksort(int low, int high) {
         int i = low;
         int j = high;
 
@@ -59,14 +55,17 @@ class QuickSort {
 
         }
     }
+
     void sort(int[] input) {
 
 
-        if (input == null || input.length == 0) { return; }
-        this.lenght= input.length;
-        this.input=input;
+        if (input == null || input.length == 0) {
+            return;
+        }
+        this.lenght = input.length;
+        this.input = input;
 
-        quicksort(0,lenght-1);
+        quicksort(0, lenght - 1);
 
 
     }
@@ -82,7 +81,7 @@ class QuickSort {
 
 class QuickSort1 {
 
-    private int input[];
+    private int[] input;
     private int length;
 
     public void sort(int[] numbers) {
