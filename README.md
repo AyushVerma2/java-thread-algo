@@ -112,4 +112,17 @@ Initialization : n this phase, all static variables are assigned with their valu
  #### JNI:
  It is an interface which interacts with the Native Method Libraries and provides the native libraries(C, C++) required for the execution.
 
+#### Fork-join pool
 
+ * Example for for join pool
+ * it is same as executor server im one each thread divide the task in sub=task,
+ * do the compute and join the results.
+ * each thread maintain there own DeQue , which is used to store the
+ * sub-task and if one thread DEQue is empty,it will pull the task
+ * from other thread from rare end(work stealing)
+ 
+ ###### When to used:
+   - Avoid sync ,not shared var across thread,no blocking IO,
+     pure funtion , shud run in isolated
+  Eg:
+   Soring,Martrix multiplication,best move finder a game,tree travesal

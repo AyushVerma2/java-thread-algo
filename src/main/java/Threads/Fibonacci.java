@@ -6,7 +6,7 @@ import java.util.concurrent.RecursiveTask;
  * Example for for join pool
  * it is same as executor server im one each thread divide the task in sub=task,
  * do the compute and join the results.
- * each thread maind there own DeQue , which is used to store the
+ * each thread maintain there own DeQue , which is used to store the
  * sub-task and if one thread DEQue is empty,it will pull the task
  * from other thread from rare end(work stealing_
  */
