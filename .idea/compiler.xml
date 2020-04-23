@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="core-java-basic" />
+        <module name="findsquareinmatrix" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="core-java-basic" target="8" />
+      <module name="findsquareinmatrix" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

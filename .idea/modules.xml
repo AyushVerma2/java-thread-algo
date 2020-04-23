@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/core-java-basic.iml" filepath="$PROJECT_DIR$/.idea/core-java-basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/findsquareinmatrix/findsquareinmatrix.iml" filepath="$PROJECT_DIR$/findsquareinmatrix/findsquareinmatrix.iml" />
     </modules>
   </component>
 </project>
