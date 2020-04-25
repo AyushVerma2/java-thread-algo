@@ -2,7 +2,7 @@ package array;
 
 public class OddOccurenceInArray {
     public static void main(String[] args) {
-        int[] solution = {9, 3, 9, 3, 9, 7, 9};
+        int[] solution = {2, 3, 4, 4, 3, 1 ,1};
         System.out.println(solution(solution));
     }
 

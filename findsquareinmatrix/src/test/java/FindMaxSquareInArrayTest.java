@@ -10,12 +10,7 @@ public class FindMaxSquareInArrayTest {
 
         FindMaxSquareInArray findMaxSquareInArray
                 = new FindMaxSquareInArray();
-        int[][] a = {{2, 2, 3, 3, 4, 4},
-                {5, 5, 7, 7, 7, 4},
-                {1, 2, 7, 7, 7, 4},
-                {4, 4, 7, 7, 7, 4},
-                {5, 5, 5, 1, 2, 7},
-                {8, 7, 9, 4, 4, 4}};
+
 
         int[][] input = {{0, 3, 3, 3, 0},
                 {2, 3, 3, 3, 3},
