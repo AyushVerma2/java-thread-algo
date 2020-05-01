@@ -1,6 +1,7 @@
 package Threads;
 
 import java.util.LinkedList;
+import java.util.Queue;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -16,7 +17,7 @@ public class MyArrayBlockingQueue<T> {
     Condition empty = lock.newCondition();
     Condition full = lock.newCondition();
     int max = 10;
-    LinkedList<T> myqueue;
+    Queue<T> myqueue;
 
     public MyArrayBlockingQueue(int size) {
         this.max = size;

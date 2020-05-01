@@ -10,8 +10,9 @@ public class MyLinkList {
         myLinkList.addNode(new Node(55));
         myLinkList.addNode(new Node(212));
         myLinkList.display();
-       myLinkList.head= myLinkList.reverse(myLinkList.head);
-       System.out.println();
+        //myLinkList.head = myLinkList.reverse(myLinkList.head);
+        myLinkList.head = myLinkList.reverseList(myLinkList.head);
+        System.out.println();
         myLinkList.display();
 
     }
@@ -43,6 +44,12 @@ public class MyLinkList {
 
     }
 
+    /**
+     * Iterative
+     *
+     * @param node
+     * @return
+     */
     Node reverse(Node node) {
         Node prev = null;
         Node current = node;
@@ -57,6 +64,20 @@ public class MyLinkList {
         return node;
 
 
+    }
+
+    /**
+     * Recursive
+     *
+     * @param node
+     * @return
+     */
+    Node reverseList(Node node) {
+        if (node == null || node.next == null) return node;
+        Node p = reverseList(node.next);
+        node.next.next = node;
+        node.next = null;
+        return p;
     }
 
 
