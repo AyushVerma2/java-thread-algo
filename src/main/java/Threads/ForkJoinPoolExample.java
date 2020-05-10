@@ -10,15 +10,15 @@ import java.util.concurrent.RecursiveTask;
  * sub-task and if one thread DEQue is empty,it will pull the task
  * from other thread from rare end(work stealing_
  */
-public class Fibonacci extends RecursiveTask<Integer> {
+public class ForkJoinPoolExample extends RecursiveTask<Integer> {
     int n;
 
-    Fibonacci(int n) {
+    ForkJoinPoolExample(int n) {
         this.n = n;
     }
 
     public static void main(String[] args) {
-        Fibonacci fibonacci = new Fibonacci(10);
+        ForkJoinPoolExample fibonacci = new ForkJoinPoolExample(10);
         System.out.println(fibonacci.compute());
     }
 
@@ -28,9 +28,9 @@ public class Fibonacci extends RecursiveTask<Integer> {
             return n;
 
         }
-        Fibonacci f1 = new Fibonacci(n - 1);
+        ForkJoinPoolExample f1 = new ForkJoinPoolExample(n - 1);
         f1.fork();
-        Fibonacci f2 = new Fibonacci(n - 2);
+        ForkJoinPoolExample f2 = new ForkJoinPoolExample(n - 2);
         f2.fork();
         return f1.join() + f2.join();
 
