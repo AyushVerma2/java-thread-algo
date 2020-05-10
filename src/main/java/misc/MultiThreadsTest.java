@@ -8,6 +8,9 @@ import java.util.concurrent.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+/**
+ *
+ */
 
 public class MultiThreadsTest {
 
@@ -20,17 +23,18 @@ public class MultiThreadsTest {
         info.setInfo2(fetchInfo2());
         info.setInfo3(fetchInfo3());*/
 
-        CompletableFuture<String> fetch1 = CompletableFuture
-                .supplyAsync(()-> fetchInfo1());
+        CompletableFuture<Void> task1=CompletableFuture
+                .supplyAsync(()-> fetchInfo1())
+                .thenAcceptAsync(s -> info.setInfo1(s));
 
-        CompletableFuture<String> fetch2 = CompletableFuture
-                .supplyAsync(()-> fetchInfo2());
-        CompletableFuture<String> fetch3 = CompletableFuture
-                .supplyAsync(()-> fetchInfo3());
+        CompletableFuture<Void> task2=CompletableFuture
+                .supplyAsync(()-> fetchInfo2())
+                .thenAcceptAsync(s -> info.setInfo2(s));
+        CompletableFuture<Void> task3=CompletableFuture
+                .supplyAsync(()-> fetchInfo3())
+                .thenAcceptAsync(s -> info.setInfo3(s));
+        CompletableFuture.allOf(task1,task2,task3).get();
 
-        info.setInfo1(fetch1.get());
-        info.setInfo2(fetch2.get());
-        info.setInfo3(fetch3.get());
 
         LocalDateTime end = LocalDateTime.now();
         Duration duration = Duration.between(start, end);
