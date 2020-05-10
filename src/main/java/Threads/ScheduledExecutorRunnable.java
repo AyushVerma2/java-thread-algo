@@ -10,12 +10,12 @@ public class ScheduledExecutorRunnable {
 
         ScheduledExecutorService ses = Executors.newScheduledThreadPool(1);
 
-        Runnable task2 = () -> System.out.println("Running task2...");
 
         task1();
 
         //run this task after 5 seconds, nonblock for task3
-        ses.schedule(task2, 5, TimeUnit.SECONDS);
+        ses.schedule(() -> System.out.println("This is scheduled task"), 5,
+                TimeUnit.SECONDS);
 
         task3();
 
@@ -30,5 +30,6 @@ public class ScheduledExecutorRunnable {
     public static void task3() {
         System.out.println("Running task3...");
     }
+
 
 }

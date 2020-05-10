@@ -39,7 +39,7 @@ public class Fibbnocci {
 
     static int fib(int n) {
         int lookup[] = new int[100];
-        Arrays.fill(lookup,-1);
+        Arrays.fill(lookup, -1);
         if (lookup[n] == -1) {
             if (n <= 1)
                 lookup[n] = n;
@@ -51,6 +51,7 @@ public class Fibbnocci {
 
     /**
      * Iterative methods
+     *
      * @param n
      * @return
      */

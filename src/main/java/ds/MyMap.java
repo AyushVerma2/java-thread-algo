@@ -2,11 +2,11 @@ package ds;
 
 // Java program to demonstrate implementation of our
 // own hash table with chaining for collision detection
+
 import java.util.ArrayList;
 
 // A node of chains
-class HashNode<K, V>
-{
+class HashNode<K, V> {
     K key;
     V value;
 
@@ -14,16 +14,14 @@ class HashNode<K, V>
     HashNode<K, V> next;
 
     // Constructor
-    public HashNode(K key, V value)
-    {
+    public HashNode(K key, V value) {
         this.key = key;
         this.value = value;
     }
 }
 
 // Class to represent entire hash table
-class Map<K, V>
-{
+class Map<K, V> {
     // bucketArray is used to store array of chains
     private ArrayList<HashNode<K, V>> bucketArray;
 
@@ -35,8 +33,7 @@ class Map<K, V>
 
     // Constructor (Initializes capacity, size and
     // empty chains.
-    public Map()
-    {
+    public Map() {
         bucketArray = new ArrayList<>();
         numBuckets = 10;
         size = 0;
@@ -46,21 +43,38 @@ class Map<K, V>
             bucketArray.add(null);
     }
 
-    public int size() { return size; }
-    public boolean isEmpty() { return size() == 0; }
+    // Driver method to test Map class
+    public static void main(String[] args) {
+        Map<String, Integer> map = new Map<>();
+        map.add("this", 1);
+        map.add("coder", 2);
+        map.add("this", 4);
+        map.add("hi", 5);
+        System.out.println(map.size());
+        System.out.println(map.remove("this"));
+        System.out.println(map.remove("this"));
+        System.out.println(map.size());
+        System.out.println(map.isEmpty());
+    }
+
+    public int size() {
+        return size;
+    }
+
+    public boolean isEmpty() {
+        return size() == 0;
+    }
 
     // This implements hash function to find index
     // for a key
-    private int getBucketIndex(K key)
-    {
+    private int getBucketIndex(K key) {
         int hashCode = key.hashCode();
         int index = hashCode % numBuckets;
         return index;
     }
 
     // Method to remove a given key
-    public V remove(K key)
-    {
+    public V remove(K key) {
         // Apply hash function to find index for given key
         int bucketIndex = getBucketIndex(key);
 
@@ -69,8 +83,7 @@ class Map<K, V>
 
         // Search for key in its chain
         HashNode<K, V> prev = null;
-        while (head != null)
-        {
+        while (head != null) {
             // If Key found
             if (head.key.equals(key))
                 break;
@@ -97,15 +110,13 @@ class Map<K, V>
     }
 
     // Returns value for a key
-    public V get(K key)
-    {
+    public V get(K key) {
         // Find head of chain for given key
         int bucketIndex = getBucketIndex(key);
         HashNode<K, V> head = bucketArray.get(bucketIndex);
 
         // Search key in chain
-        while (head != null)
-        {
+        while (head != null) {
             if (head.key.equals(key))
                 return head.value;
             head = head.next;
@@ -116,17 +127,14 @@ class Map<K, V>
     }
 
     // Adds a key value pair to hash
-    public void add(K key, V value)
-    {
+    public void add(K key, V value) {
         // Find head of chain for given key
         int bucketIndex = getBucketIndex(key);
         HashNode<K, V> head = bucketArray.get(bucketIndex);
 
         // Check if key is already present
-        while (head != null)
-        {
-            if (head.key.equals(key))
-            {
+        while (head != null) {
+            if (head.key.equals(key)) {
                 head.value = value;
                 return;
             }
@@ -142,8 +150,7 @@ class Map<K, V>
 
         // If load factor goes beyond threshold, then
         // double hash table size
-        if ((1.0*size)/numBuckets >= 0.7)
-        {
+        if ((1.0 * size) / numBuckets >= 0.7) {
             ArrayList<HashNode<K, V>> temp = bucketArray;
             bucketArray = new ArrayList<>();
             numBuckets = 2 * numBuckets;
@@ -151,29 +158,12 @@ class Map<K, V>
             for (int i = 0; i < numBuckets; i++)
                 bucketArray.add(null);
 
-            for (HashNode<K, V> headNode : temp)
-            {
-                while (headNode != null)
-                {
+            for (HashNode<K, V> headNode : temp) {
+                while (headNode != null) {
                     add(headNode.key, headNode.value);
                     headNode = headNode.next;
                 }
             }
         }
-    }
-
-    // Driver method to test Map class
-    public static void main(String[] args)
-    {
-        Map<String, Integer>map = new Map<>();
-        map.add("this",1 );
-        map.add("coder",2 );
-        map.add("this",4 );
-        map.add("hi",5 );
-        System.out.println(map.size());
-        System.out.println(map.remove("this"));
-        System.out.println(map.remove("this"));
-        System.out.println(map.size());
-        System.out.println(map.isEmpty());
     }
 }

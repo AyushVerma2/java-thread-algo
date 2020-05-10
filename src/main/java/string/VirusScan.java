@@ -1,31 +1,31 @@
 package string;
 
 public class VirusScan {
-        public static void main(String[] args) {
-            //String str = "ACGTACGTAC";
-            String str = "ACGTACGTAC";
-            System.out.println(numberOfSaveDNA(str,10, 2));
-            System.out.println(numberOfSaveDNA(str,10, 3));
-        }
+    public static void main(String[] args) {
+        //String str = "ACGTACGTAC";
+        String str = "ACGTACGTAC";
+        System.out.println(numberOfSaveDNA(str, 10, 2));
+        System.out.println(numberOfSaveDNA(str, 10, 3));
+    }
 
-        private static int numberOfSaveDNA(String str, int n, int k) {
-            int aCharCount= 0;
-            int result = 0;
-            for(int i =0 ; i < str.length(); i++) {
-                for ( int j =i+1; j <= str.length(); j++) {
-                    if(str.charAt(j-1) == 'A') {
-                        aCharCount++;
-                    }
-                    if(aCharCount <=k) {
-                        if(result <j-i) {
-                            result =j-i;
-                        }
-                    } else {
-                        break;
-                    }
+    private static int numberOfSaveDNA(String str, int n, int k) {
+        int aCharCount = 0;
+        int result = 0;
+        for (int i = 0; i < str.length(); i++) {
+            for (int j = i + 1; j <= str.length(); j++) {
+                if (str.charAt(j - 1) == 'A') {
+                    aCharCount++;
                 }
-                aCharCount=0;
+                if (aCharCount <= k) {
+                    if (result < j - i) {
+                        result = j - i;
+                    }
+                } else {
+                    break;
+                }
             }
-            return result;
+            aCharCount = 0;
+        }
+        return result;
     }
 }

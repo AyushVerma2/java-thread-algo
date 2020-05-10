@@ -39,13 +39,13 @@ public class EmployeeList {
                 .filter(e -> e.getSalary() > 2000)
                 .map(b -> b.getSalary()).collect(Collectors.toList());
 
-        int a[]={2,4,6,88,9,8,4,6,3};
-        int sum =IntStream.of(a).filter(e-> e>6)
+        int a[] = {2, 4, 6, 88, 9, 8, 4, 6, 3};
+        int sum = IntStream.of(a).filter(e -> e > 6)
                 .sum();
-        System.out.println("Sum :: " +sum);
+        System.out.println("Sum :: " + sum);
 
         IntStream.of(a)
-                .distinct().forEach(c-> System.out.print(c+" "));
+                .distinct().forEach(c -> System.out.print(c + " "));
     }
 
 
