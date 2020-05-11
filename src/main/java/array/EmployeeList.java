@@ -8,6 +8,7 @@ import java.util.stream.IntStream;
 public class EmployeeList {
     public static void main(String[] args) {
 
+
         List<Employee> allEmployee = new ArrayList<>();
 
         allEmployee.add(new Employee("AA", 1000));
@@ -22,7 +23,7 @@ public class EmployeeList {
         allEmployee.stream().forEach(w -> System.out.println(w));
 
         // filter
-        System.out.println("Fileteing baed on salary");
+        System.out.println("Filtering based on salary");
         allEmployee.stream()
                 .filter(e -> e.getSalary() < 5000)
                 .filter(e -> e.getSalary() > 2000)
