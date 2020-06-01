@@ -1,6 +1,7 @@
 package stream;
 
-import lombok.*;
+import lombok.Data;
+import lombok.ToString;
 
 @Data
 @ToString

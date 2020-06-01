@@ -1,4 +1,4 @@
-package array;
+package stream;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +27,7 @@ public class EmployeeList {
         allEmployee.stream()
                 .filter(e -> e.getSalary() < 5000)
                 .filter(e -> e.getSalary() > 2000)
-                .forEach(w -> System.out.println(w.name));
+                .forEach(w -> System.out.println(w.getName()));
 
 
         List<String> nameLst = allEmployee.stream()
@@ -54,30 +54,30 @@ public class EmployeeList {
 
 //@NoArgsConstructor
 //@AllArgsConstructor
-class Employee {
-    String name;
-    int salary;
-
-    Employee(String name, int salary) {
-        this.name = name;
-        this.salary = salary;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getSalary() {
-        return salary;
-    }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "name='" + name + '\'' +
-                ", salary=" + salary +
-                '}';
-    }
-
-
-}
+//class Employee {
+//    String name;
+//    int salary;
+//
+//    Employee(String name, int salary) {
+//        this.name = name;
+//        this.salary = salary;
+//    }
+//
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public int getSalary() {
+//        return salary;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "Employee{" +
+//                "name='" + name + '\'' +
+//                ", salary=" + salary +
+//                '}';
+//    }
+//
+//
+//}

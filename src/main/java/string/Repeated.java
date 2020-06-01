@@ -6,7 +6,7 @@ import java.util.Map;
 public class Repeated {
 
     public static void main(String[] args) {
-        System.out.println(getFirstNonRepeatedChar("this is ayish data"));
+        System.out.println(getFirstNonRepeatedChar("this is Ayush data"));
     }
 
     public static char getFirstNonRepeatedChar(String str) {

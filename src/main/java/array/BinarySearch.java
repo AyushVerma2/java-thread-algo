@@ -10,6 +10,12 @@ public class BinarySearch {
         System.out.println("Is number present REC > " + isPresentR);
     }
 
+    /**
+     * Iterative
+     * @param data
+     * @param i
+     * @return
+     */
     private static boolean find(int[] data, int i) {
         int end = data.length - 1;
         int start = 0;

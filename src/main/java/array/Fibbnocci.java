@@ -19,12 +19,10 @@ public class Fibbnocci {
      */
 
     static int fibnocci(int num) {
-        if (num == 0) {
-            return 0;
+        if (num == 0 || num == 1) {
+            return num;
         }
-        if (num == 1) {
-            return 1;
-        }
+
         return fibnocci(num - 1) + fibnocci(num - 2);
     }
 
